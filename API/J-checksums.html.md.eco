@@ -84,3 +84,6 @@ The identifier of the payment from which the fee will be charged ([creditcard-ob
 
 **fee_currency:** _string or unset_  
 The currency of the fee (e.g. EUR, USD). If it´s not set, the currency of the transaction is used. We suggest to always use as it might cause problems, if your account does not support the same currencies as your merchants accounts.
+
+**reusable_payment_description:** _string or null_  
+Description appears at the acquirers checkout page (e.g. PayPal) when you request permission for a resuable payment.
