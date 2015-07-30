@@ -55,10 +55,14 @@ In addition to the mandatory transaction details listed above, you can specify s
 - **Shopping cart:** List of items purchased in this transaction. Each item must have a name, amount and quantity. Additionally you can specify a description, item number (e.g. EAN/SKU) and the URL in your shop.
 - **Shipping costs:** Shipping costs included in the transaction amount. Only necessary if you provide a shopping cart and the item total doesn't match the transaction amount.
 - **Handling costs:** Handling costs included in the transaction amount. Only necessary if you provide a shopping cart and the item total doesn't match the transaction amount.
+- **request_reusable_payment:** Set this to `1` if you want to ask the buyer at the same time for a billing agreement. This means you can reuse the resulting payment to do further transactions without the need to ask the buyer again for permisson.
+- **reusable_payment_description:** The set description appears at checkout page when you request permission for a resuable payment.
 
 Please see our guide on [transactions](/guides/reference/transactions.html) for more details on transaction setup.
 
 <p class="important">If you specify a shopping cart, the <strong>item total must match the total transaction amount</strong>. If it doesn't, please use shipping and handling costs to specify the difference. If you don't specify a shopping cart, you also don't have to specify shipping or handling costs.</p>
+
+<p class="info">If the request with `request_reusable_payment=1` was successful the payment attribute `is_recurring` is `true`, which means you can reuse it for further transaction or for subscriptions.</p>
 
 ## PayPal checkout
 
