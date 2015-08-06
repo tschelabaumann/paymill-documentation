@@ -95,6 +95,13 @@ The identifier of the payment from which the fee will be charged ([creditcard-ob
 **fee_currency:** _string or unset_  
 The currency of the fee (e.g. EUR, USD). If it´s not set, the currency of the transaction is used. We suggest to always use as it might cause problems, if your account does not support the same currencies as your merchants accounts.
 
+**require_reusable_payment:** _boolean or null_  
+Set this to `true` if you want to ask the buyer for a billing agreement during checkout.  
+If the buyer accepts, the resulting payment can be reused for transactions and subscriptions without additional interaction.
+
+**reusable_payment_description:** _string or null_  
+Description appears at the acquirers checkout page (e.g. PayPal) when you request permission for a reusable payment, *max. 127 characters*
+
 ## Create new payment checksum
 
 > Request
@@ -151,3 +158,6 @@ Client (ID) where the created payment should belong to.
 
 **app_id:** _string or null_  
 App (ID) that created this payment or null if created by yourself.
+
+**reusable_payment_description:** _string or null_  
+Description appears at the acquirers checkout page (e.g. PayPal) when you request permission for a reusable payment.
